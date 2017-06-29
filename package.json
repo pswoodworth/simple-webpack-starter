@@ -11,6 +11,8 @@
   "dependencies": {
     "bleacon": "^0.5.1",
     "bleno": "^0.4.2",
-    "noble": "^1.8.1"
+    "md5": "^2.2.1",
+    "noble": "^1.8.1",
+    "nomad-stream": "0.0.8"
   }
 }
