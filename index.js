@@ -14,7 +14,7 @@ noble.on('discover', function(peripheral) {
   peripheral.connect(function(error) {
     console.log('connected to peripheral: ' + peripheral.uuid);
     peripheral.discoverAllServicesAndCharacteristics((error, services, characteristics)=>{
-		console.log('discovered device with characteristics', characteristics);
+		console.log('discovered', services, 'with characteristics', characteristics);
 	});
   });
 });
