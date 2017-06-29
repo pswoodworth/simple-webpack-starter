@@ -11,12 +11,13 @@ noble.on('stateChange', function(state) {
 
 
 noble.on('discover', function(peripheral) {
-  peripheral.connect(function(error) {
-    console.log('connected to peripheral: ' + peripheral.uuid);
-    peripheral.discoverAllServicesAndCharacteristics((error, services, characteristics)=>{
-		console.log('discovered', services, 'with characteristics', characteristics);
-	});
-  });
+  console.log('found', peripheral);
+  // peripheral.connect(function(error) {
+  //   console.log('connected to peripheral: ' + peripheral.uuid);
+  //   peripheral.discoverAllServicesAndCharacteristics((error, services, characteristics)=>{
+	// 	console.log('discovered', services, 'with characteristics', characteristics);
+	// });
+  // });
 });
 
 noble.on('stateChange', function(state) {
