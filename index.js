@@ -9,12 +9,12 @@ noble.on('stateChange', function(state) {
   }
 });
 
-/*
+
 noble.on('discover', function(peripheral) {
   peripheral.connect(function(error) {
     console.log('connected to peripheral: ' + peripheral.uuid);
     peripheral.discoverAllServicesAndCharacteristics((error, services, characteristics)=>{
-		console.log('discovered', services, 'with characteristics', characteristics);
+		console.log('discovered device with characteristics', characteristics);
 	});
   });
 });
@@ -26,7 +26,7 @@ noble.on('stateChange', function(state) {
     noble.stopScanning();
   }
 });
-*/
+
 
 bleno.on('stateChange', function(state) {
 	var advertisementData = new Buffer("I AM THE TEST DATA");
@@ -34,5 +34,3 @@ bleno.on('stateChange', function(state) {
     bleno.startAdvertisingWithEIRData(advertisementData);
   }
 });
-
-
