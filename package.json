@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bleacon": "^0.5.1",
     "bleno": "^0.4.2",
     "noble": "^1.8.1"
   }
