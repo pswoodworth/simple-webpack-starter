@@ -3,8 +3,20 @@ var Bleacon = require('bleacon');
 var md5 = require('md5');
 const Nomad = require('nomad-stream');
 
+var express = require('express')
+var app = express()
+
+app.use(express.static('public'));
+
+
 
 const nomad = new Nomad();
+
+var visibleBeacons = {};
+
+setInterval(()=>{
+  visibleBeacons = {};
+})
 
 var uuid;
 
@@ -19,7 +31,19 @@ nomad.prepareToPublish().then(function(nomadInstance) {
 
   Bleacon.startAdvertising(uuid);
   Bleacon.startScanning();
-  Bleacon.on('discover', function(bleacon) {
-    console.log('discovered beacon with uuid', bleacon);
+  Bleacon.on('discover', function(beacon) {
+    visibleBeacons[beacon.uuid] = beacon;
   });
 });
+
+
+app.get('/devices', function(req, res){
+  res.json({
+    visibleBeacons: visibleBeacons,
+    id: uuid
+  });
+});
+
+app.listen(3000, function () {
+  console.log('listening on port 3000!')
+})
