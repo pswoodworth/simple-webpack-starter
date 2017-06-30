@@ -9788,13 +9788,14 @@ class Display extends __WEBPACK_IMPORTED_MODULE_1_react__["Component"] {
       __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
         'ul',
         null,
-        Object.keys(props.visibleBeacons).map(deviceKey => {
-          __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+        Object.keys(props.visibleBeacons).map((deviceKey, index) => {
+          return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
             'li',
-            null,
+            { key: index },
             __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
               'code',
               null,
+              'device ',
               props.visibleBeacons[deviceKey].uuid
             )
           );
@@ -9806,10 +9807,20 @@ class Display extends __WEBPACK_IMPORTED_MODULE_1_react__["Component"] {
 /* harmony export (immutable) */ __webpack_exports__["default"] = Display;
 
 
-fetch('/devices').then(res => res.json()).then(res => {
-  console.log(res);
-  __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_react_dom__["render"])(__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(Display, { id: res.id, visibleBeacons: res.visibleBeacons }), document.getElementById('target'));
-});
+const fetchAndRender = function () {
+  fetch('/devices').then(res => res.json()).then(res => {
+    console.log(res);
+    console.log(res.visibleBeacons);
+    console.log(Object.keys(res.visibleBeacons));
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_react_dom__["render"])(__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(Display, { id: res.id, visibleBeacons: res.visibleBeacons }), document.getElementById('target'));
+  });
+};
+
+fetchAndRender();
+
+setInterval(() => {
+  fetchAndRender();
+}, 1000);
 
 /***/ }),
 /* 82 */

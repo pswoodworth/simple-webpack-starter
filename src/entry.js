@@ -18,8 +18,8 @@ export default class Display extends Component {
         <h3>Devices I See</h3>
         <ul>
           {
-            Object.keys(props.visibleBeacons).map((deviceKey) => {
-              <li><code>{props.visibleBeacons[deviceKey].uuid}</code></li>
+            Object.keys(props.visibleBeacons).map((deviceKey, index) => {
+              return <li key={index}><code>device {props.visibleBeacons[deviceKey].uuid}</code></li>
             })
           }
         </ul>
@@ -28,11 +28,21 @@ export default class Display extends Component {
   }
 }
 
+const fetchAndRender = function(){
+  fetch('/devices').then(res => res.json()).then((res) => {
+    console.log(res);
+    console.log(res.visibleBeacons);
+    console.log(Object.keys(res.visibleBeacons))
+    render(<Display id={res.id} visibleBeacons={res.visibleBeacons}/>, document.getElementById('target'));
+  })
+}
 
-fetch('/devices').then(res => res.json()).then((res) => {
-  console.log(res);
-  render(<Display id={res.id} visibleBeacons={res.visibleBeacons}/>, document.getElementById('target'));
-})
+fetchAndRender();
+
+setInterval(()=>{
+  fetchAndRender();
+},1000);
+
 
 
 

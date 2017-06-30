@@ -15,7 +15,11 @@ const nomad = new Nomad();
 var visibleBeacons = {};
 
 setInterval(()=>{
-  visibleBeacons = {};
+  visibleBeacons = {
+    'ca90ced8e993552aebc971543d7e1e3b': {
+      uuid: 'ca90ced8e993552aebc971543d7e1e3b'
+    }
+  };
 })
 
 var uuid;
