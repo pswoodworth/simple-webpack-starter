@@ -8,14 +8,14 @@ const nomad = new Nomad();
 
 var uuid;
 
-console.debug('starting nomad...');
+console.log('starting nomad...');
 
 nomad.prepareToPublish().then(function(nomadInstance) {
-  console.debug('nomad up at', nomadInstance.identity.ID);
+  console.log('nomad up at', nomadInstance.identity.ID);
 
   uuid = md5(nomadInstance.identity.ID);
 
-  console.debug('starting beacon at', uuid);
+  console.log('starting beacon at', uuid);
 
   Bleacon.startAdvertising(uuid);
   Bleacon.startScanning();
