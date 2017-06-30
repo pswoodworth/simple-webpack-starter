@@ -19,7 +19,7 @@ export default class Display extends Component {
         <ul>
           {
             Object.keys(props.visibleBeacons).map((deviceKey, index) => {
-              return <li key={index}><code>device {props.visibleBeacons[deviceKey].uuid}</code></li>
+              return <li className="device" key={index}><code>{props.visibleBeacons[deviceKey].uuid}</code></li>
             })
           }
         </ul>

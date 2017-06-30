@@ -9791,11 +9791,10 @@ class Display extends __WEBPACK_IMPORTED_MODULE_1_react__["Component"] {
         Object.keys(props.visibleBeacons).map((deviceKey, index) => {
           return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
             'li',
-            { key: index },
+            { className: 'device', key: index },
             __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
               'code',
               null,
-              'device ',
               props.visibleBeacons[deviceKey].uuid
             )
           );
@@ -11178,7 +11177,7 @@ exports = module.exports = __webpack_require__(85)(undefined);
 
 
 // module
-exports.push([module.i, ".display {\n  text-align: center;\n  margin: 10px; }\n\n.logo {\n  height: 50px; }\n", ""]);
+exports.push([module.i, ".display {\n  text-align: center;\n  margin: 10px; }\n\n.logo {\n  height: 50px; }\n\nul {\n  list-style-type: none;\n  margin: 0px;\n  padding: 0px; }\n\n.device {\n  display: inline-block;\n  padding: 3px 6px;\n  margin: 0px;\n  margin-top: 3px;\n  background-color: black;\n  color: white;\n  border-radius: 3px; }\n", ""]);
 
 // exports
 
