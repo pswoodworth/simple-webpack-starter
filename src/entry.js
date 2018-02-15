@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 require('./style.scss');
 
 
-class Display extends Component {
+class App extends Component {
   constructor(props) {
     super(props);
   }
@@ -17,4 +17,4 @@ class Display extends Component {
 }
 
 
-render(<Display />, document.getElementById('target'));
+render(<App />, document.getElementById('target'));
