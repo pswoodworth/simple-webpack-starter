@@ -18,7 +18,7 @@
     "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.1",
     "express": "^4.15.2",
-    "node-sass": "^4.5.2",
+    "node-sass": "^4.9.2",
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
     "sass-loader": "^6.0.3",
@@ -32,7 +32,7 @@
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.6.1",
-    "nodemon": "^1.11.0",
+    "nodemon": "^1.18.3",
     "webpack": "^2.5.1",
     "webpack-livereload-plugin": "^0.11.0"
   }
